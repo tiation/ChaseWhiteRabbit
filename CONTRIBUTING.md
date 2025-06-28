@@ -10,7 +10,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 
 ### Reporting Bugs
 
-- Check if the bug has already been reported in our [Issues](https://github.com/chasewhiterabbit/chasewhiterabbit/issues)
+- Check if the bug has already been reported in our [Issues](https://github.com/tiation/ChaseWhiteRabbit/issues)
 - If not, create a new issue with a clear title and detailed description
 - Include steps to reproduce, expected behavior, actual behavior, and environment details
 - Attach screenshots if applicable
@@ -25,7 +25,7 @@ By participating in this project, you are expected to uphold our [Code of Conduc
 ### Your First Code Contribution
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/chasewhiterabbit.git`
+2. Clone your fork: `git clone https://github.com/your-username/ChaseWhiteRabbit.git`
 3. Create a new branch: `git checkout -b feature/your-feature-name`
 4. Make your changes
 5. Test your changes

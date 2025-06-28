@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="docs/assets/logo.png" width="200" alt="ChaseWhiteRabbit Logo">
+  <!-- Placeholder for logo image - create and add a proper logo file -->
+  <!-- <img src="docs/assets/logo.png" width="200" alt="ChaseWhiteRabbit Logo"> -->
+  <strong>ChaseWhiteRabbit</strong>
 </p>
 
 <h1 align="center">ChaseWhiteRabbit</h1>
@@ -20,7 +22,7 @@
 
 ## Mission
 
-ChaseWhiteRabbit is an NGO focused on leveraging technology to create inclusive solutions for people with disabilities and disadvantaged communities. Our core belief is that **automation is compassion at scale** - we build tools that both save time and widen access to critical services.
+ChaseWhiteRabbit is an NGO that transforms grief into systemic change through sustainable technology solutions. We create income-producing applications that address root causes of social problems, with our flagship project **GriefToDesign** leading this revolution. Our core belief is that **automation is compassion at scale** - we build tools that both generate sustainable revenue and create lasting social impact.
 
 ### Our Values
 
@@ -32,7 +34,28 @@ ChaseWhiteRabbit is an NGO focused on leveraging technology to create inclusive 
 
 ---
 
-## Projects
+## Flagship Project: GriefToDesign
+
+**Repository**: [github.com/tiation/grieftodesign](https://github.com/tiation/grieftodesign)
+
+GriefToDesign transforms personal trauma into actionable systemic solutions. Born from the devastating loss of a child, this platform provides a framework for anyone to convert their grief into policy recommendations, system redesigns, and preventive measures.
+
+### The $19 Trillion Solution
+Our research demonstrates that Australia's $19 trillion in national wealth could eliminate scarcity and prevent many tragedies. The GriefToDesign platform includes:
+- Mathematical proof of wealth redistribution feasibility
+- 12 Acts for complete systemic transformation
+- Trust-first governance models
+- Implementation roadmaps for abundance-based society
+
+### Revenue Model
+- **Free Tier**: Basic grief-to-design tools for personal healing
+- **Professional Tier**: Advanced analytics for therapists and counselors ($29/month)
+- **Organization Tier**: Bulk licensing for NGOs and government agencies ($199/month)
+- **Consultation Services**: Custom systemic analysis projects ($2,000-$50,000)
+
+---
+
+## Additional Projects
 
 ### ChaseWhiteRabbit Intranet
 A 25-module, enterprise-grade intranet system designed for distributed community teams. The intranet serves as a central hub for our operations and is available for other NGOs to adopt and customize.
