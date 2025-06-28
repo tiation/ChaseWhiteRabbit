@@ -34,6 +34,10 @@ This repository contains enterprise-grade documentation including board governan
 
 ### 🎯 Core Mission & Strategy
 - **[Main README](../README.md)** - Overview of ChaseWhiteRabbit and our mission
+- **[Founding Story and Mission](./FoundingStoryAndMission.md)** - The profound loss that inspired our work
+- **[Philosophy and Ethics](./PhilosophyAndEthics.md)** - Our moral framework and ethical principles
+- **[Vision and Ideals](./VisionAndIdeals.md)** - The world love would build
+- **[$19 Trillion Solution](./19TrillionSolutionImplementation.md)** - Mathematical proof of abundance-based governance
 - **[GriefToDesign Project](https://github.com/tiation/grieftodesign)** - Our flagship income-producing application
 
 ### 🏛️ Governance & Operations
