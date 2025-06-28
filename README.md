@@ -211,6 +211,8 @@ Our methodology is grounded in research showing that **cooperation consistently 
 
 This comprehensive approach ensures ChaseWhiteRabbit can create lasting systemic change while maintaining the financial resources needed to continue our mission of transforming grief into hope through cooperative technology development.
 
+> **📖 For the complete story of how we've built this unprecedented framework, see our [Documentation Summary](docs/DocumentationSummary.md) — a profound and beautiful overview of transforming grief into systematic hope.**
+
 ---
 
 ## Contact

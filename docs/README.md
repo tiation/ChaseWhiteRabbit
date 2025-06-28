@@ -32,6 +32,9 @@ This repository contains enterprise-grade documentation including board governan
 
 ## Quick Navigation
 
+### 🎆 **Complete Overview**
+- **[Documentation Summary](./DocumentationSummary.md)** - **The profound beauty of transforming grief into systematic hope**
+
 ### 🎯 Core Mission & Strategy
 - **[Main README](../README.md)** - Overview of ChaseWhiteRabbit and our mission
 - **[Founding Story and Mission](./FoundingStoryAndMission.md)** - The profound loss that inspired our work
