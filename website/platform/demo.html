@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GriefToDesign Demo - Transform Grief into Systematic Solutions</title>
+    <meta name="description" content="Experience the GriefToDesign framework - transform personal losses into systematic solutions through our interactive demo.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'grief': '#2D3748',
+                        'hope': '#4299E1',
+                        'love': '#ED64A6',
+                        'abundance': '#48BB78',
+                        'cooperation': '#9F7AEA'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .step-transition {
+            transition: all 0.5s ease-in-out;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="/" class="flex items-center space-x-2">
+                        <span class="text-2xl">🐇</span>
+                        <span class="text-xl font-bold bg-gradient-to-r from-love to-hope bg-clip-text text-transparent">
+                            ChaseWhiteRabbit
+                        </span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-400">GriefToDesign Demo</span>
+                    <a href="/" class="text-sm hover:text-love transition-colors">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Container -->
+    <div class="pt-20 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-love via-hope to-abundance bg-clip-text text-transparent">
+                    GriefToDesign Demo
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+                    Experience how personal losses can be transformed into systematic solutions. This interactive demo guides you through our 5-question framework.
+                </p>
+                <div class="bg-yellow-500/20 border border-yellow-400 rounded-lg p-4 text-sm text-yellow-200">
+                    ⚠️ This is a demonstration only. For actual grief processing, please work with qualified professionals and use the full platform with appropriate support.
+                </div>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-400">Progress</span>
+                    <span class="text-sm text-gray-400"><span id="current-step">1</span> of 6</span>
+                </div>
+                <div class="bg-gray-700 rounded-full h-2">
+                    <div id="progress-bar" class="bg-gradient-to-r from-love to-hope h-2 rounded-full transition-all duration-300" style="width: 16.66%"></div>
+                </div>
+            </div>
+
+            <!-- Demo Steps -->
+            <div class="bg-black/30 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden">
+                <!-- Step 0: Introduction -->
+                <div id="step-0" class="step p-8">
+                    <div class="text-center">
+                        <div class="text-6xl mb-6">💭</div>
+                        <h2 class="text-3xl font-bold mb-6 text-hope">Welcome to GriefToDesign</h2>
+                        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                            This framework was born from profound loss but designed to create systematic hope. 
+                            By walking through these questions, you'll see how personal experiences can become 
+                            blueprints for preventing future tragedies.
+                        </p>
+                        <p class="text-gray-400 mb-8">
+                            We'll use a hypothetical scenario to demonstrate the process, but remember: 
+                            this is meant to be used with real experiences when you're ready.
+                        </p>
+                        <button onclick="nextStep()" class="bg-gradient-to-r from-hope to-hope/80 hover:from-hope/80 hover:to-hope text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Begin Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 1: What did I lose? -->
+                <div id="step-1" class="step p-8 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold mb-4 text-love">Question 1: What did I lose?</h2>
+                        <p class="text-gray-300 mb-6">
+                            This question helps identify not just the immediate loss, but all the ripple effects - 
+                            the future possibilities, relationships, and dreams that were also lost.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-love/10 border border-love/30 rounded-lg p-6 mb-6">
+                        <h3 class="font-bold mb-3 text-love">Demo Scenario:</h3>
+                        <p class="text-gray-200 mb-4">
+                            "A parent loses their child in a preventable accident due to insufficient safety infrastructure in their community."
+                        </p>
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <div><strong>Immediate loss:</strong> The child's life, presence, future</div>
+                            <div><strong>Relationship losses:</strong> Parent-child bond, family dynamics, shared experiences</div>
+                            <div><strong>Future losses:</strong> Graduations, career, grandchildren, family legacy</div>
+                            <div><strong>Community loss:</strong> A contributing member, potential innovations, connections</div>
+                        </div>
+                    </div>
+
+                    <textarea id="loss-input" class="w-full bg-black/30 border border-white/20 rounded-lg p-4 text-white placeholder-gray-400 mb-6" 
+                              rows="4" placeholder="In your own words, what would you identify as lost in this scenario? (This is just practice - feel free to reflect on the example or add your own thoughts)"></textarea>
+
+                    <div class="flex justify-between">
+                        <button onclick="prevStep()" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-full transition-colors">
+                            Previous
+                        </button>
+                        <button onclick="nextStep()" class="bg-gradient-to-r from-love to-love/80 hover:from-love/80 hover:to-love text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: What caused it? -->
+                <div id="step-2" class="step p-8 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold mb-4 text-abundance">Question 2: What caused it?</h2>
+                        <p class="text-gray-300 mb-6">
+                            Look beyond the immediate cause to trace the longer chains of causality. 
+                            Often, systemic failures create conditions where tragedies become more likely.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-abundance/10 border border-abundance/30 rounded-lg p-6 mb-6">
+                        <h3 class="font-bold mb-3 text-abundance">Causal Analysis:</h3>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <div><strong>Immediate cause:</strong> Accident due to unsafe infrastructure</div>
+                            <div><strong>Systemic causes:</strong> 
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Underfunded local infrastructure maintenance</li>
+                                    <li>• Lack of community input in safety planning</li>
+                                    <li>• Budget priorities favoring other projects</li>
+                                    <li>• Insufficient safety standards or enforcement</li>
+                                    <li>• Political structures that don't prioritize prevention</li>
+                                </ul>
+                            </div>
+                            <div><strong>Root causes:</strong> Scarcity-based governance, competition for resources, lack of cooperative planning</div>
+                        </div>
+                    </div>
+
+                    <textarea id="cause-input" class="w-full bg-black/30 border border-white/20 rounded-lg p-4 text-white placeholder-gray-400 mb-6" 
+                              rows="4" placeholder="What additional systemic causes can you identify? Think about resource allocation, decision-making processes, or structural issues..."></textarea>
+
+                    <div class="flex justify-between">
+                        <button onclick="prevStep()" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-full transition-colors">
+                            Previous
+                        </button>
+                        <button onclick="nextStep()" class="bg-gradient-to-r from-abundance to-abundance/80 hover:from-abundance/80 hover:to-abundance text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: What would have prevented it? -->
+                <div id="step-3" class="step p-8 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold mb-4 text-hope">Question 3: What would have prevented it?</h2>
+                        <p class="text-gray-300 mb-6">
+                            Identify specific interventions that could have prevented the tragedy. 
+                            Think about both immediate safety measures and systemic changes.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-hope/10 border border-hope/30 rounded-lg p-6 mb-6">
+                        <h3 class="font-bold mb-3 text-hope">Prevention Strategies:</h3>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <div><strong>Immediate prevention:</strong> 
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Proper safety infrastructure maintenance</li>
+                                    <li>• Regular safety inspections</li>
+                                    <li>• Community hazard reporting systems</li>
+                                    <li>• Emergency response improvements</li>
+                                </ul>
+                            </div>
+                            <div><strong>Systemic prevention:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Adequate infrastructure funding</li>
+                                    <li>• Community-centered safety planning</li>
+                                    <li>• Preventive maintenance programs</li>
+                                    <li>• Cooperative governance structures</li>
+                                    <li>• Abundance-based resource allocation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <textarea id="prevention-input" class="w-full bg-black/30 border border-white/20 rounded-lg p-4 text-white placeholder-gray-400 mb-6" 
+                              rows="4" placeholder="What other prevention strategies can you think of? Consider both short-term fixes and long-term systemic changes..."></textarea>
+
+                    <div class="flex justify-between">
+                        <button onclick="prevStep()" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-full transition-colors">
+                            Previous
+                        </button>
+                        <button onclick="nextStep()" class="bg-gradient-to-r from-hope to-hope/80 hover:from-hope/80 hover:to-hope text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 4: What system could stop it happening again? -->
+                <div id="step-4" class="step p-8 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold mb-4 text-cooperation">Question 4: What system could stop it happening again?</h2>
+                        <p class="text-gray-300 mb-6">
+                            Design new systems or transform existing ones to prevent similar tragedies. 
+                            Think about governance, resource allocation, and community empowerment.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cooperation/10 border border-cooperation/30 rounded-lg p-6 mb-6">
+                        <h3 class="font-bold mb-3 text-cooperation">Systematic Solutions:</h3>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <div><strong>Governance reforms:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Community-led safety committees with real decision-making power</li>
+                                    <li>• Transparent budget allocation processes</li>
+                                    <li>• Mandatory community input on infrastructure projects</li>
+                                    <li>• Regular safety audits with public reporting</li>
+                                </ul>
+                            </div>
+                            <div><strong>Resource allocation:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Dedicated infrastructure maintenance funds</li>
+                                    <li>• Prevention-first budget priorities</li>
+                                    <li>• Community emergency response resources</li>
+                                    <li>• Investment in long-term safety infrastructure</li>
+                                </ul>
+                            </div>
+                            <div><strong>Cultural shifts:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• From reactive to proactive safety culture</li>
+                                    <li>• Community ownership of shared spaces</li>
+                                    <li>• Cooperation over competition in resource allocation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <textarea id="system-input" class="w-full bg-black/30 border border-white/20 rounded-lg p-4 text-white placeholder-gray-400 mb-6" 
+                              rows="4" placeholder="What systematic changes would you implement? How would you restructure decision-making, funding, or community involvement?"></textarea>
+
+                    <div class="flex justify-between">
+                        <button onclick="prevStep()" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-full transition-colors">
+                            Previous
+                        </button>
+                        <button onclick="nextStep()" class="bg-gradient-to-r from-cooperation to-cooperation/80 hover:from-cooperation/80 hover:to-cooperation text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 5: What's the first step I can take today? -->
+                <div id="step-5" class="step p-8 hidden">
+                    <div class="mb-6">
+                        <h2 class="text-2xl font-bold mb-4 text-yellow-400">Question 5: What's the first step I can take today?</h2>
+                        <p class="text-gray-300 mb-6">
+                            Transform insight into action. What concrete step can be taken immediately to begin 
+                            implementing the systematic changes you've identified?
+                        </p>
+                    </div>
+                    
+                    <div class="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6 mb-6">
+                        <h3 class="font-bold mb-3 text-yellow-400">Immediate Actions:</h3>
+                        <div class="space-y-3 text-sm text-gray-300">
+                            <div><strong>Personal actions:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Document the analysis and share it publicly</li>
+                                    <li>• Contact local representatives about infrastructure concerns</li>
+                                    <li>• Join or create community safety advocacy groups</li>
+                                    <li>• Attend city council meetings to raise awareness</li>
+                                </ul>
+                            </div>
+                            <div><strong>Community organizing:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Form a neighborhood safety committee</li>
+                                    <li>• Organize safety walks to identify hazards</li>
+                                    <li>• Create petitions for infrastructure improvements</li>
+                                    <li>• Build coalitions with other affected communities</li>
+                                </ul>
+                            </div>
+                            <div><strong>Systemic advocacy:</strong>
+                                <ul class="ml-4 mt-2 space-y-1">
+                                    <li>• Draft policy proposals for preventive infrastructure funding</li>
+                                    <li>• Research and promote cooperative governance models</li>
+                                    <li>• Connect with other parents/community members with similar experiences</li>
+                                    <li>• Use platforms like GriefToDesign to amplify the message</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <textarea id="action-input" class="w-full bg-black/30 border border-white/20 rounded-lg p-4 text-white placeholder-gray-400 mb-6" 
+                              rows="4" placeholder="What specific action would you take first? Think about something you could realistically do this week to begin creating change..."></textarea>
+
+                    <div class="flex justify-between">
+                        <button onclick="prevStep()" class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-full transition-colors">
+                            Previous
+                        </button>
+                        <button onclick="generateSummary()" class="bg-gradient-to-r from-yellow-400 to-yellow-300 hover:from-yellow-300 hover:to-yellow-200 text-black px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Generate Summary
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Summary and Next Steps -->
+                <div id="step-6" class="step p-8 hidden">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-6">✨</div>
+                        <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-love via-hope to-abundance bg-clip-text text-transparent">
+                            From Grief to Systematic Hope
+                        </h2>
+                        <p class="text-lg text-gray-300 mb-8">
+                            You've experienced how personal loss can be transformed into systematic solutions. 
+                            This is the power of the GriefToDesign framework.
+                        </p>
+                    </div>
+
+                    <div id="summary-content" class="bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/20 mb-8">
+                        <!-- Summary will be generated here -->
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-hope/10 border border-hope/30 rounded-lg p-6">
+                            <h3 class="font-bold mb-3 text-hope">Next Steps</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• Explore the full GriefToDesign platform</li>
+                                <li>• Connect with others using the framework</li>
+                                <li>• Share your story and systematic solutions</li>
+                                <li>• Join the ChaseWhiteRabbit community</li>
+                            </ul>
+                        </div>
+                        <div class="bg-love/10 border border-love/30 rounded-lg p-6">
+                            <h3 class="font-bold mb-3 text-love">Get Support</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li>• Work with qualified grief counselors</li>
+                                <li>• Join trauma-informed support groups</li>
+                                <li>• Use professional GriefToDesign features</li>
+                                <li>• Access our resource library</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-center space-x-4">
+                        <a href="https://github.com/tiation/grieftodesign" class="inline-block bg-gradient-to-r from-hope to-hope/80 hover:from-hope/80 hover:to-hope text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                            Explore Full Platform
+                        </a>
+                        <button onclick="resetDemo()" class="inline-block bg-gray-600 hover:bg-gray-500 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                            Try Demo Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        const totalSteps = 6;
+
+        function updateProgress() {
+            const progressPercent = (currentStep / (totalSteps - 1)) * 100;
+            document.getElementById('progress-bar').style.width = progressPercent + '%';
+            document.getElementById('current-step').textContent = currentStep + 1;
+        }
+
+        function showStep(stepNumber) {
+            // Hide all steps
+            for (let i = 0; i <= totalSteps; i++) {
+                const step = document.getElementById(`step-${i}`);
+                if (step) {
+                    step.classList.add('hidden');
+                }
+            }
+            
+            // Show current step
+            const currentStepElement = document.getElementById(`step-${stepNumber}`);
+            if (currentStepElement) {
+                currentStepElement.classList.remove('hidden');
+                currentStepElement.classList.add('fade-in');
+            }
+            
+            updateProgress();
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function generateSummary() {
+            const lossInput = document.getElementById('loss-input').value;
+            const causeInput = document.getElementById('cause-input').value;
+            const preventionInput = document.getElementById('prevention-input').value;
+            const systemInput = document.getElementById('system-input').value;
+            const actionInput = document.getElementById('action-input').value;
+
+            const summaryContent = document.getElementById('summary-content');
+            summaryContent.innerHTML = `
+                <h3 class="text-xl font-bold mb-4 text-center">Your GriefToDesign Analysis</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-love mb-2">What was lost:</h4>
+                        <p class="text-sm text-gray-300">${lossInput || 'The profound loss of a child and all the futures, relationships, and possibilities that loss represents.'}</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-abundance mb-2">Systemic causes identified:</h4>
+                        <p class="text-sm text-gray-300">${causeInput || 'Inadequate infrastructure, underfunding of prevention, lack of community input in safety planning.'}</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-hope mb-2">Prevention strategies:</h4>
+                        <p class="text-sm text-gray-300">${preventionInput || 'Proper maintenance systems, community-centered planning, preventive resource allocation.'}</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-cooperation mb-2">Systematic solutions:</h4>
+                        <p class="text-sm text-gray-300">${systemInput || 'Community-led governance, transparent resource allocation, cooperative decision-making structures.'}</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-yellow-400 mb-2">First action step:</h4>
+                        <p class="text-sm text-gray-300">${actionInput || 'Document this analysis, share it publicly, and begin organizing community safety advocacy.'}</p>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/20 text-center">
+                    <p class="text-sm text-gray-400 italic">
+                        "This is how grief becomes hope, how personal tragedy becomes systematic prevention, 
+                        how love becomes the foundation for building better systems."
+                    </p>
+                </div>
+            `;
+
+            nextStep();
+        }
+
+        function resetDemo() {
+            currentStep = 0;
+            showStep(currentStep);
+            
+            // Clear all inputs
+            document.getElementById('loss-input').value = '';
+            document.getElementById('cause-input').value = '';
+            document.getElementById('prevention-input').value = '';
+            document.getElementById('system-input').value = '';
+            document.getElementById('action-input').value = '';
+        }
+
+        // Initialize demo
+        document.addEventListener('DOMContentLoaded', function() {
+            showStep(0);
+        });
+    </script>
+</body>
+</html>
