@@ -10,6 +10,10 @@
 </p>
 
 <p align="center">
+  <strong>🌐 <a href="https://tiation.github.io/ChaseWhiteRabbit/">Visit Our Website</a></strong>
+</p>
+
+<p align="center">
   <a href="#mission">Mission</a> •
   <a href="#projects">Projects</a> •
   <a href="#get-involved">Get Involved</a> •
