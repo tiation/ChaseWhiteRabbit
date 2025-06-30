@@ -19,16 +19,22 @@
             theme: {
                 extend: {
                     colors: {
-                        'grief': '#2D3748',
-                        'hope': '#4299E1',
-                        'love': '#ED64A6',
-                        'abundance': '#48BB78',
-                        'cooperation': '#9F7AEA'
+                        'grief': '#1a1a1a',
+                        'hope': '#00d4ff',
+                        'love': '#ff0080',
+                        'abundance': '#00ff88',
+                        'cooperation': '#8000ff',
+                        'electric-blue': '#00d4ff',
+                        'hot-pink': '#ff0080',
+                        'neon-green': '#00ff88',
+                        'neon-purple': '#8000ff',
+                        'cyber-yellow': '#ffff00'
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'gentle-pulse': 'gentle-pulse 4s ease-in-out infinite',
-                        'cascade': 'cascade 0.5s ease-out'
+                        'cascade': 'cascade 0.5s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
                     }
                 }
             }
@@ -49,31 +55,46 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(255, 0, 128, 0.2); }
+            to { box-shadow: 0 0 30px rgba(255, 0, 128, 0.4), 0 0 60px rgba(0, 212, 255, 0.3); }
+        }
         .cascade-delay-1 { animation-delay: 0.1s; }
         .cascade-delay-2 { animation-delay: 0.2s; }
         .cascade-delay-3 { animation-delay: 0.3s; }
         .cascade-delay-4 { animation-delay: 0.4s; }
+        .neon-text {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .fluoro-gradient {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 128, 0.1), rgba(0, 255, 136, 0.1));
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen">
+<body class="bg-white text-gray-900 min-h-screen">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-black/20 backdrop-blur-lg z-50 border-b border-white/10">
+    <nav class="fixed top-0 w-full glass-effect z-50 border-b border-gray-200/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-2">
                     <span class="text-2xl">🐇</span>
-                    <span class="text-xl font-bold bg-gradient-to-r from-love to-hope bg-clip-text text-transparent">
+                    <span class="text-xl font-bold bg-gradient-to-r from-love to-hope bg-clip-text text-transparent neon-text">
                         ChaseWhiteRabbit
                     </span>
                 </div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="#story" class="hover:text-love transition-colors">Our Story</a>
-                    <a href="#solution" class="hover:text-abundance transition-colors">$19T Solution</a>
-                    <a href="#platform" class="hover:text-hope transition-colors">GriefToDesign</a>
-                    <a href="#vision" class="hover:text-cooperation transition-colors">Vision</a>
-                    <a href="#docs" class="hover:text-yellow-400 transition-colors">Documentation</a>
+                    <a href="#story" class="text-gray-700 hover:text-love transition-colors font-medium">Our Story</a>
+                    <a href="#solution" class="text-gray-700 hover:text-abundance transition-colors font-medium">$19T Solution</a>
+                    <a href="#platform" class="text-gray-700 hover:text-hope transition-colors font-medium">GriefToDesign</a>
+                    <a href="#vision" class="text-gray-700 hover:text-cooperation transition-colors font-medium">Vision</a>
+                    <a href="#docs" class="text-gray-700 hover:text-cyber-yellow transition-colors font-medium">Documentation</a>
                 </div>
-                <button class="md:hidden text-white">
+                <button class="md:hidden text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -86,44 +107,44 @@
     <section class="pt-20 pb-20 px-4">
         <div class="max-w-6xl mx-auto text-center">
             <div class="animate-cascade">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-love via-hope to-abundance bg-clip-text text-transparent">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-love via-hope to-abundance bg-clip-text text-transparent neon-text">
                     We Start Again
                 </h1>
-                <p class="text-2xl md:text-3xl mb-4 text-gray-300 cascade-delay-1 animate-cascade">
+                <p class="text-2xl md:text-3xl mb-4 text-gray-600 cascade-delay-1 animate-cascade font-medium">
                     Not from zero, but from loss
                 </p>
-                <p class="text-xl md:text-2xl mb-8 text-gray-400 cascade-delay-2 animate-cascade max-w-3xl mx-auto">
+                <p class="text-xl md:text-2xl mb-8 text-gray-500 cascade-delay-2 animate-cascade max-w-3xl mx-auto">
                     Transforming the deepest grief into systematic hope through 
-                    <span class="text-cooperation font-semibold">cooperative technology</span>, 
-                    <span class="text-abundance font-semibold">mathematical proof of abundance</span>, and 
-                    <span class="text-love font-semibold">love made systematic</span>
+                    <span class="text-cooperation font-bold neon-text">cooperative technology</span>, 
+                    <span class="text-abundance font-bold neon-text">mathematical proof of abundance</span>, and 
+                    <span class="text-love font-bold neon-text">love made systematic</span>
                 </p>
             </div>
             
             <div class="cascade-delay-3 animate-cascade">
-                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white/20">
+                <div class="glass-effect rounded-2xl p-8 mb-12 border border-gray-200/30 fluoro-gradient animate-glow">
                     <div class="grid md:grid-cols-3 gap-6 text-center">
                         <div class="space-y-2">
-                            <div class="text-3xl font-bold text-abundance">$19T</div>
-                            <div class="text-sm text-gray-300">Australia's wealth available now</div>
+                            <div class="text-3xl font-bold text-abundance neon-text">$19T</div>
+                            <div class="text-sm text-gray-600 font-medium">Australia's wealth available now</div>
                         </div>
                         <div class="space-y-2">
-                            <div class="text-3xl font-bold text-hope">$416K</div>
-                            <div class="text-sm text-gray-300">Per person allocation possible</div>
+                            <div class="text-3xl font-bold text-hope neon-text">$416K</div>
+                            <div class="text-sm text-gray-600 font-medium">Per person allocation possible</div>
                         </div>
                         <div class="space-y-2">
-                            <div class="text-3xl font-bold text-love">100%</div>
-                            <div class="text-sm text-gray-300">Poverty elimination achievable</div>
+                            <div class="text-3xl font-bold text-love neon-text">100%</div>
+                            <div class="text-sm text-gray-600 font-medium">Poverty elimination achievable</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="cascade-delay-4 animate-cascade space-x-4">
-                <a href="#story" class="inline-block bg-gradient-to-r from-love to-love/80 hover:from-love/80 hover:to-love text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                <a href="#story" class="inline-block bg-gradient-to-r from-love to-hot-pink hover:from-hot-pink hover:to-love text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
                     Our Story
                 </a>
-                <a href="#platform" class="inline-block bg-gradient-to-r from-hope to-hope/80 hover:from-hope/80 hover:to-hope text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105">
+                <a href="#platform" class="inline-block bg-gradient-to-r from-hope to-electric-blue hover:from-electric-blue hover:to-hope text-white px-8 py-3 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
                     Try GriefToDesign
                 </a>
             </div>
@@ -131,11 +152,11 @@
     </section>
 
     <!-- Interactive Story Section -->
-    <section id="story" class="py-20 px-4 bg-black/20">
+    <section id="story" class="py-20 px-4 bg-gray-50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-love">From Profound Loss to Systematic Hope</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
                     This is the story of how one parent's devastating loss became a framework for preventing future tragedies through evidence-based cooperation and abundance-based governance.
                 </p>
             </div>
@@ -148,12 +169,12 @@
                     <!-- Loss -->
                     <div class="flex items-center">
                         <div class="w-1/2 pr-8 text-right">
-                            <div class="bg-grief/80 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                                <h3 class="text-2xl font-bold mb-3 text-white">The Loss</h3>
-                                <p class="text-gray-300 mb-4">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-gray-300 shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-grief">The Loss</h3>
+                                <p class="text-gray-800 mb-4">
                                     "I will not die without changing the things I think had even a fraction of causality in the loss my baby had."
                                 </p>
-                                <p class="text-sm text-gray-400">
+                                <p class="text-sm text-gray-600">
                                     A parent's promise made in the deepest grief becomes the foundation for systematic change.
                                 </p>
                             </div>
@@ -167,12 +188,12 @@
                         <div class="w-1/2 pr-8"></div>
                         <div class="w-4 h-4 bg-love rounded-full border-4 border-white z-10"></div>
                         <div class="w-1/2 pl-8">
-                            <div class="bg-love/80 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                                <h3 class="text-2xl font-bold mb-3 text-white">The Analysis</h3>
-                                <p class="text-gray-300 mb-4">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-gray-300 shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-love">The Analysis</h3>
+                                <p class="text-gray-800 mb-4">
                                     "People are good. Systems are broken. We can fix the systems."
                                 </p>
-                                <p class="text-sm text-gray-400">
+                                <p class="text-sm text-gray-600">
                                     Systematic analysis reveals that most tragedies result from systemic failures, not individual failings.
                                 </p>
                             </div>
@@ -182,12 +203,12 @@
                     <!-- Discovery -->
                     <div class="flex items-center">
                         <div class="w-1/2 pr-8 text-right">
-                            <div class="bg-abundance/80 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                                <h3 class="text-2xl font-bold mb-3 text-white">The Discovery</h3>
-                                <p class="text-gray-300 mb-4">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-gray-300 shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-abundance">The Discovery</h3>
+                                <p class="text-gray-800 mb-4">
                                     Australia has $19 trillion in wealth - enough to eliminate scarcity and prevent countless tragedies.
                                 </p>
-                                <p class="text-sm text-gray-400">
+                                <p class="text-sm text-gray-600">
                                     Mathematical proof that abundance already exists; only political will is needed.
                                 </p>
                             </div>
@@ -201,12 +222,12 @@
                         <div class="w-1/2 pr-8"></div>
                         <div class="w-4 h-4 bg-hope rounded-full border-4 border-white z-10"></div>
                         <div class="w-1/2 pl-8">
-                            <div class="bg-hope/80 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                                <h3 class="text-2xl font-bold mb-3 text-white">The Transformation</h3>
-                                <p class="text-gray-300 mb-4">
+                            <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-gray-300 shadow-lg">
+                                <h3 class="text-2xl font-bold mb-3 text-hope">The Transformation</h3>
+                                <p class="text-gray-800 mb-4">
                                     GriefToDesign platform and ChaseWhiteRabbit NGO: turning personal trauma into systematic solutions.
                                 </p>
-                                <p class="text-sm text-gray-400">
+                                <p class="text-sm text-gray-600">
                                     Technology, economics, and governance designed with love as the foundation.
                                 </p>
                             </div>
@@ -222,52 +243,52 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-abundance">The $19 Trillion Solution</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
                     Mathematical proof that Australia can eliminate poverty, provide universal basic income, and transform to abundance-based governance - starting today.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 <div>
-                    <h3 class="text-3xl font-bold mb-6 text-white">The Mathematics</h3>
+                    <h3 class="text-3xl font-bold mb-6 text-gray-900">The Mathematics</h3>
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center p-4 bg-black/30 rounded-lg border border-white/20">
-                            <span class="text-gray-300">Total National Wealth</span>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <span class="text-gray-700">Total National Wealth</span>
                             <span class="text-2xl font-bold text-abundance">$19.4T</span>
                         </div>
-                        <div class="flex justify-between items-center p-4 bg-black/30 rounded-lg border border-white/20">
-                            <span class="text-gray-300">Required for Universal Allocation</span>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <span class="text-gray-700">Required for Universal Allocation</span>
                             <span class="text-2xl font-bold text-hope">$11.36T</span>
                         </div>
-                        <div class="flex justify-between items-center p-4 bg-black/30 rounded-lg border border-white/20">
-                            <span class="text-gray-300">Safety Margin</span>
+                        <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <span class="text-gray-700">Safety Margin</span>
                             <span class="text-2xl font-bold text-love">10.7%</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-gradient-to-br from-abundance/20 to-hope/20 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                    <h3 class="text-2xl font-bold mb-6 text-white">What Every Australian Gets</h3>
+                <div class="bg-gradient-to-br from-abundance/20 to-hope/20 backdrop-blur-sm rounded-2xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">What Every Australian Gets</h3>
                     <div class="space-y-4">
                         <div class="flex items-center space-x-3">
                             <span class="text-3xl">🏠</span>
                             <div>
-                                <div class="font-bold text-lg">$200,000</div>
-                                <div class="text-sm text-gray-300">Housing Credit</div>
+                                <div class="font-bold text-lg text-gray-900">$200,000</div>
+                                <div class="text-sm text-gray-700">Housing Credit</div>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
                             <span class="text-3xl">🎓</span>
                             <div>
-                                <div class="font-bold text-lg">$200,000</div>
-                                <div class="text-sm text-gray-300">Business/Education Credit</div>
+                                <div class="font-bold text-lg text-gray-900">$200,000</div>
+                                <div class="text-sm text-gray-700">Business/Education Credit</div>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
                             <span class="text-3xl">💰</span>
                             <div>
-                                <div class="font-bold text-lg">$800/week</div>
-                                <div class="text-sm text-gray-300">Universal Basic Income (5 years)</div>
+                                <div class="font-bold text-lg text-gray-900">$800/week</div>
+                                <div class="text-sm text-gray-700">Universal Basic Income (5 years)</div>
                             </div>
                         </div>
                     </div>
