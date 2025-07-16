@@ -1,13 +1,19 @@
-<p align="center">
-  <!-- Placeholder for logo image - create and add a proper logo file -->
-  <!-- <img src="docs/assets/logo.png" width="200" alt="ChaseWhiteRabbit Logo"> -->
-  <strong>ChaseWhiteRabbit</strong>
-</p>
+# 🐰🔍 ChaseWhiteRabbit: Following Curiosity to Truth
 
-<h1 align="center">ChaseWhiteRabbit</h1>
-<p align="center">
-  <em>Technology that removes barriers for people with disabilities and those doing it tough.</em>
-</p>
+<div align="center">
+
+![ChaseWhiteRabbit Banner](https://img.shields.io/badge/Follow-The%20White%20Rabbit-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptMCA2YTQgNCAwIDAgMSA0IDQgNCA0IDAgMCAxLTQgNCA0IDQgMCAwIDEtNC00IDQgNCAwIDAgMSA0LTR6Ii8+PC9zdmc+)
+
+**"People aren't broken. Fix the system."**
+
+*Technology that removes barriers for people with disabilities and those doing it tough*
+
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen?style=flat-square)](https://tiation.github.io/ChaseWhiteRabbit/)
+[![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)](https://github.com/tiation/ChaseWhiteRabbit)
+[![NGO](https://img.shields.io/badge/Type-NGO-blue?style=flat-square)](docs/about/mission.md)
+[![Impact](https://img.shields.io/badge/Impact-Growing-orange?style=flat-square)](docs/impact/metrics.md)
+
+</div>
 
 <p align="center">
   <strong>🌐 <a href="https://tiation.github.io/ChaseWhiteRabbit/">Visit Our Website</a></strong>
