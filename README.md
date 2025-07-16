@@ -234,14 +234,14 @@ This comprehensive approach ensures ChaseWhiteRabbit can create lasting systemic
 
 ## Related Repositories
 
-This repository is part of the Tiation GitHub ecosystem. For a complete overview of all repositories and their relationships, see the [Repository Index](../REPOSITORY_INDEX.md).
+This repository is part of the Tiation GitHub ecosystem. For a complete overview of all repositories and their relationships, see the [Repository Index](./REPOSITORY_INDEX.md).
 
 ### Direct Dependencies
 - [grieftodesign](../grieftodesign/) - Creative design collaboration
 - [core-foundation-rs](../core-foundation-rs/) - Core Rust libraries
 
 ### Quick Links
-- [Repository Index](../REPOSITORY_INDEX.md) - Complete repository overview
+- [Repository Index](./REPOSITORY_INDEX.md) - Complete repository overview
 - [Development Setup](../ubuntu-dev-setup/README.md) - Development environment setup
 - [Workflows](../workflows/) - CI/CD templates
 - [Infrastructure](../server-configs-gae/) - Deployment configurations
