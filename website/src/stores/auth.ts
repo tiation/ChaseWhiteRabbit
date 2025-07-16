@@ -2,6 +2,11 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { User, LoginCredentials, RegisterCredentials, AuthResponse, AuthError } from '../types'
 import { apiService } from '../services/api'
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || ''
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
+const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null
 import { useLoadingStore } from './loading'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -134,7 +139,35 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // Refresh token action
+// Social Login actions
+const socialLogin = async (provider: string) => {
+  loadingStore.startAuthLoading(`Signing in with ${provider}...`)
+  clearError()
+
+  try {
+    if (!supabase) {
+      // For demo, simulate social login
+      console.log(`Social login with ${provider} initiated`)
+      // In production, this would redirect to the OAuth provider
+      setError({ message: 'Social login is not configured. Please set up Supabase credentials.' })
+      return
+    }
+    
+    const { error } = await supabase.auth.signInWithOAuth({ 
+      provider: provider as any,
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`
+      }
+    })
+    if (error) setError({ message: error.message })
+  } catch (err: any) {
+    setError({ message: err.message || 'Social login failed. Please try again.' })
+  } finally {
+    loadingStore.stopLoading('auth')
+  }
+}
+
+// Refresh token action
   const refreshAccessToken = async (): Promise<boolean> => {
     if (!refreshToken.value) return false
 
@@ -213,6 +246,7 @@ export const useAuthStore = defineStore('auth', () => {
     login,
     register,
     logout,
+    socialLogin,
     refreshAccessToken,
     initializeAuth,
     clearError,
