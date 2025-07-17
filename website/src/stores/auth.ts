@@ -64,6 +64,11 @@ export const useAuthStore = defineStore('auth', () => {
     clearError()
     
     try {
+      if (!supabase) {
+        setError({ message: 'Supabase is not configured. Please set up environment variables.' })
+        return false
+      }
+      
       // Sign in with Supabase
       const { data, error } = await supabase.auth.signInWithPassword({
         email: credentials.email,
