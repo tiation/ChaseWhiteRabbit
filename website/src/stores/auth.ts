@@ -129,6 +129,11 @@ export const useAuthStore = defineStore('auth', () => {
         return false
       }
 
+      if (!supabase) {
+        setError({ message: 'Supabase is not configured. Please set up environment variables.' })
+        return false
+      }
+
       // Sign up with Supabase
       const { data, error } = await supabase.auth.signUp({
         email: credentials.email,
@@ -193,6 +198,12 @@ export const useAuthStore = defineStore('auth', () => {
     loadingStore.startAuthLoading('Signing out...')
     
     try {
+      if (!supabase) {
+        clearAuthData()
+        clearError()
+        return
+      }
+      
       // Sign out from Supabase
       const { error } = await supabase.auth.signOut()
       
@@ -242,6 +253,11 @@ const socialLogin = async (provider: string) => {
 // Refresh token action
   const refreshAccessToken = async (): Promise<boolean> => {
     try {
+      if (!supabase) {
+        clearAuthData()
+        return false
+      }
+      
       const { data, error } = await supabase.auth.refreshSession()
       
       if (error) {
@@ -284,6 +300,11 @@ const socialLogin = async (provider: string) => {
   // Initialize auth from localStorage
   const initializeAuth = async () => {
     try {
+      if (!supabase) {
+        clearAuthData()
+        return
+      }
+      
       // Get the current session from Supabase
       const { data: { session }, error } = await supabase.auth.getSession()
       
@@ -319,7 +340,7 @@ const socialLogin = async (provider: string) => {
       supabase.auth.onAuthStateChange(async (event, session) => {
         if (event === 'SIGNED_IN' && session) {
           // Fetch user profile
-          const { data: profile } = await supabase
+          const { data: profile } = await supabase!
             .from('user_profiles')
             .select('*')
             .eq('id', session.user.id)
