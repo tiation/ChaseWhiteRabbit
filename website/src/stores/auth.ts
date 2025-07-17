@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import type { User, LoginCredentials, RegisterCredentials, AuthResponse, AuthError } from '../types'
 import { apiService } from '../services/api'
 import { supabase } from '../lib/supabase'
+import { mockAuthService } from '../services/mockAuth'
 import { useLoadingStore } from './loading'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -65,8 +66,10 @@ export const useAuthStore = defineStore('auth', () => {
     
     try {
       if (!supabase) {
-        setError({ message: 'Supabase is not configured. Please set up environment variables.' })
-        return false
+        // Use mock authentication service when Supabase is not configured
+        const authResponse = await mockAuthService.login(credentials)
+        setAuthData(authResponse)
+        return true
       }
       
       // Sign in with Supabase
@@ -130,8 +133,10 @@ export const useAuthStore = defineStore('auth', () => {
       }
 
       if (!supabase) {
-        setError({ message: 'Supabase is not configured. Please set up environment variables.' })
-        return false
+        // Use mock authentication service when Supabase is not configured
+        const authResponse = await mockAuthService.register(credentials)
+        setAuthData(authResponse)
+        return true
       }
 
       // Sign up with Supabase
@@ -199,6 +204,8 @@ export const useAuthStore = defineStore('auth', () => {
     
     try {
       if (!supabase) {
+        // Use mock authentication service when Supabase is not configured
+        await mockAuthService.logout()
         clearAuthData()
         clearError()
         return
@@ -229,10 +236,9 @@ const socialLogin = async (provider: string) => {
 
   try {
     if (!supabase) {
-      // For demo, simulate social login
-      console.log(`Social login with ${provider} initiated`)
-      // In production, this would redirect to the OAuth provider
-      setError({ message: 'Social login is not configured. Please set up Supabase credentials.' })
+      // Use mock authentication service for social login
+      const authResponse = await mockAuthService.socialLogin(provider)
+      setAuthData(authResponse)
       return
     }
     
@@ -254,8 +260,10 @@ const socialLogin = async (provider: string) => {
   const refreshAccessToken = async (): Promise<boolean> => {
     try {
       if (!supabase) {
-        clearAuthData()
-        return false
+        // Use mock authentication service
+        const authResponse = await mockAuthService.refreshToken()
+        setAuthData(authResponse)
+        return true
       }
       
       const { data, error } = await supabase.auth.refreshSession()
@@ -301,7 +309,18 @@ const socialLogin = async (provider: string) => {
   const initializeAuth = async () => {
     try {
       if (!supabase) {
-        clearAuthData()
+        // Use mock authentication service
+        const currentUser = await mockAuthService.getCurrentUser()
+        if (currentUser) {
+          // Restore session from mock service
+          const mockToken = mockAuthService.getToken()
+          if (mockToken) {
+            user.value = currentUser
+            token.value = mockToken
+            refreshToken.value = `refresh_${mockToken}`
+            apiService.setAuthToken(mockToken)
+          }
+        }
         return
       }
       
