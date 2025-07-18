@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 import type { User, LoginCredentials, RegisterCredentials, AuthResponse, AuthError } from '../types'
 import { apiService } from '../services/api'
 import { supabase } from '../lib/supabase'
-import { mockAuthService } from '../services/mockAuth'
 import { useLoadingStore } from './loading'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -65,53 +64,18 @@ export const useAuthStore = defineStore('auth', () => {
     clearError()
     
     try {
-      if (!supabase) {
-        // Use mock authentication service when Supabase is not configured
-        const authResponse = await mockAuthService.login(credentials)
-        setAuthData(authResponse)
+      // For demo purposes, we'll mock the API response
+      // Replace this with actual API call: const response = await apiService.post<AuthResponse>('/auth/login', credentials)
+      
+      const response = await mockLogin(credentials)
+      
+      if (response.success) {
+        setAuthData(response.data)
         return true
-      }
-      
-      // Sign in with Supabase
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: credentials.email,
-        password: credentials.password,
-      })
-      
-      if (error) {
-        setError({ message: error.message })
+      } else {
+        setError({ message: response.message })
         return false
       }
-      
-      if (data.user && data.session) {
-        // Fetch user profile from database
-        const { data: profile, error: profileError } = await supabase
-          .from('user_profiles')
-          .select('*')
-          .eq('id', data.user.id)
-          .single()
-        
-        if (profileError) {
-          console.error('Profile fetch error:', profileError)
-        }
-        
-        // Set auth data
-        setAuthData({
-          user: {
-            id: data.user.id,
-            name: profile?.full_name || data.user.email?.split('@')[0] || 'User',
-            email: data.user.email!,
-            department: profile?.department || 'General',
-            role: profile?.role || 'user',
-            avatar: profile?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile?.full_name || data.user.email!)}&background=random`
-          },
-          token: data.session.access_token,
-          refreshToken: data.session.refresh_token
-        })
-        return true
-      }
-      
-      return false
     } catch (err: any) {
       setError({ message: err.message || 'Login failed. Please try again.' })
       return false
@@ -132,64 +96,18 @@ export const useAuthStore = defineStore('auth', () => {
         return false
       }
 
-      if (!supabase) {
-        // Use mock authentication service when Supabase is not configured
-        const authResponse = await mockAuthService.register(credentials)
-        setAuthData(authResponse)
-        return true
-      }
-
-      // Sign up with Supabase
-      const { data, error } = await supabase.auth.signUp({
-        email: credentials.email,
-        password: credentials.password,
-      })
+      // For demo purposes, we'll mock the API response
+      // Replace this with actual API call: const response = await apiService.post<AuthResponse>('/auth/register', credentials)
       
-      if (error) {
-        setError({ message: error.message })
+      const response = await mockRegister(credentials)
+      
+      if (response.success) {
+        setAuthData(response.data)
+        return true
+      } else {
+        setError({ message: response.message })
         return false
       }
-      
-      if (data.user) {
-        // Create user profile
-        const { error: profileError } = await supabase
-          .from('user_profiles')
-          .insert({
-            id: data.user.id,
-            full_name: credentials.name,
-            email: credentials.email,
-            department: credentials.department,
-            role: 'user',
-            avatar_url: `https://ui-avatars.com/api/?name=${encodeURIComponent(credentials.name)}&background=random`
-          })
-        
-        if (profileError) {
-          console.error('Profile creation error:', profileError)
-        }
-        
-        // If session exists (email confirmation disabled), set auth data
-        if (data.session) {
-          setAuthData({
-            user: {
-              id: data.user.id,
-              name: credentials.name,
-              email: credentials.email,
-              department: credentials.department,
-              role: 'user',
-              avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(credentials.name)}&background=random`
-            },
-            token: data.session.access_token,
-            refreshToken: data.session.refresh_token
-          })
-          return true
-        } else {
-          // Email confirmation required
-          setError({ message: 'Please check your email to confirm your account.' })
-          return true // Still return true as signup was successful
-        }
-      }
-      
-      return false
     } catch (err: any) {
       setError({ message: err.message || 'Registration failed. Please try again.' })
       return false
@@ -203,20 +121,8 @@ export const useAuthStore = defineStore('auth', () => {
     loadingStore.startAuthLoading('Signing out...')
     
     try {
-      if (!supabase) {
-        // Use mock authentication service when Supabase is not configured
-        await mockAuthService.logout()
-        clearAuthData()
-        clearError()
-        return
-      }
-      
-      // Sign out from Supabase
-      const { error } = await supabase.auth.signOut()
-      
-      if (error) {
-        console.error('Logout error:', error)
-      }
+      // Optional: Call logout endpoint to invalidate token on server
+      // await apiService.post('/auth/logout')
       
       clearAuthData()
       clearError()
@@ -236,9 +142,10 @@ const socialLogin = async (provider: string) => {
 
   try {
     if (!supabase) {
-      // Use mock authentication service for social login
-      const authResponse = await mockAuthService.socialLogin(provider)
-      setAuthData(authResponse)
+      // For demo, simulate social login
+      console.log(`Social login with ${provider} initiated`)
+      // In production, this would redirect to the OAuth provider
+      setError({ message: 'Social login is not configured. Please set up Supabase credentials.' })
       return
     }
     
@@ -258,46 +165,21 @@ const socialLogin = async (provider: string) => {
 
 // Refresh token action
   const refreshAccessToken = async (): Promise<boolean> => {
+    if (!refreshToken.value) return false
+
     try {
-      if (!supabase) {
-        // Use mock authentication service
-        const authResponse = await mockAuthService.refreshToken()
-        setAuthData(authResponse)
+      // For demo purposes, we'll mock the refresh
+      // Replace this with actual API call: const response = await apiService.post<AuthResponse>('/auth/refresh', { refreshToken: refreshToken.value })
+      
+      const response = await mockRefreshToken(refreshToken.value)
+      
+      if (response.success) {
+        setAuthData(response.data)
         return true
-      }
-      
-      const { data, error } = await supabase.auth.refreshSession()
-      
-      if (error) {
-        console.error('Token refresh failed:', error)
+      } else {
         clearAuthData()
         return false
       }
-      
-      if (data.session && data.user) {
-        // Fetch updated user profile
-        const { data: profile } = await supabase
-          .from('user_profiles')
-          .select('*')
-          .eq('id', data.user.id)
-          .single()
-        
-        setAuthData({
-          user: {
-            id: data.user.id,
-            name: profile?.full_name || data.user.email?.split('@')[0] || 'User',
-            email: data.user.email!,
-            department: profile?.department || 'General',
-            role: profile?.role || 'user',
-            avatar: profile?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile?.full_name || data.user.email!)}&background=random`
-          },
-          token: data.session.access_token,
-          refreshToken: data.session.refresh_token
-        })
-        return true
-      }
-      
-      return false
     } catch (err) {
       console.error('Token refresh failed:', err)
       clearAuthData()
@@ -307,83 +189,29 @@ const socialLogin = async (provider: string) => {
 
   // Initialize auth from localStorage
   const initializeAuth = async () => {
-    try {
-      if (!supabase) {
-        // Use mock authentication service
-        const currentUser = await mockAuthService.getCurrentUser()
-        if (currentUser) {
-          // Restore session from mock service
-          const mockToken = mockAuthService.getToken()
-          if (mockToken) {
-            user.value = currentUser
-            token.value = mockToken
-            refreshToken.value = `refresh_${mockToken}`
-            apiService.setAuthToken(mockToken)
-          }
-        }
-        return
-      }
-      
-      // Get the current session from Supabase
-      const { data: { session }, error } = await supabase.auth.getSession()
-      
-      if (error) {
-        console.error('Session initialization error:', error)
-        clearAuthData()
-        return
-      }
-      
-      if (session) {
-        // Fetch user profile
-        const { data: profile } = await supabase
-          .from('user_profiles')
-          .select('*')
-          .eq('id', session.user.id)
-          .single()
+    const savedToken = localStorage.getItem('auth_token')
+    const savedRefreshToken = localStorage.getItem('refresh_token')
+    const savedUser = localStorage.getItem('user_data')
+
+    if (savedToken && savedRefreshToken && savedUser) {
+      try {
+        token.value = savedToken
+        refreshToken.value = savedRefreshToken
+        user.value = JSON.parse(savedUser)
         
-        setAuthData({
-          user: {
-            id: session.user.id,
-            name: profile?.full_name || session.user.email?.split('@')[0] || 'User',
-            email: session.user.email!,
-            department: profile?.department || 'General',
-            role: profile?.role || 'user',
-            avatar: profile?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile?.full_name || session.user.email!)}&background=random`
-          },
-          token: session.access_token,
-          refreshToken: session.refresh_token
-        })
+        apiService.setAuthToken(savedToken)
+        
+        // Verify token is still valid by calling /me endpoint
+        // For demo purposes, we'll skip this validation
+        // const response = await apiService.get<User>('/auth/me')
+        // if (!response.success) {
+        //   await refreshAccessToken()
+        // }
+        
+      } catch (err) {
+        console.error('Auth initialization failed:', err)
+        clearAuthData()
       }
-      
-      // Listen for auth state changes
-      supabase.auth.onAuthStateChange(async (event, session) => {
-        if (event === 'SIGNED_IN' && session) {
-          // Fetch user profile
-          const { data: profile } = await supabase!
-            .from('user_profiles')
-            .select('*')
-            .eq('id', session.user.id)
-            .single()
-          
-          setAuthData({
-            user: {
-              id: session.user.id,
-              name: profile?.full_name || session.user.email?.split('@')[0] || 'User',
-              email: session.user.email!,
-              department: profile?.department || 'General',
-              role: profile?.role || 'user',
-              avatar: profile?.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(profile?.full_name || session.user.email!)}&background=random`
-            },
-            token: session.access_token,
-            refreshToken: session.refresh_token
-          })
-        } else if (event === 'SIGNED_OUT') {
-          clearAuthData()
-        }
-      })
-    } catch (err) {
-      console.error('Auth initialization failed:', err)
-      clearAuthData()
     }
   }
 
@@ -422,3 +250,106 @@ const socialLogin = async (provider: string) => {
     hasAnyRole,
   }
 })
+
+// Mock API functions (replace with actual API calls)
+const mockLogin = async (credentials: LoginCredentials): Promise<{ success: boolean; data: AuthResponse; message: string }> => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  
+  // Mock validation
+  if (credentials.email === 'admin@company.com' && credentials.password === 'password123') {
+    return {
+      success: true,
+      message: 'Login successful',
+      data: {
+        user: {
+          id: '1',
+          name: 'John Admin',
+          email: credentials.email,
+          department: 'IT',
+          role: 'admin',
+          avatar: 'https://ui-avatars.com/api/?name=John+Admin&background=random'
+        },
+        token: 'mock-jwt-token-' + Date.now(),
+        refreshToken: 'mock-refresh-token-' + Date.now()
+      }
+    }
+  } else if (credentials.email === 'user@company.com' && credentials.password === 'password123') {
+    return {
+      success: true,
+      message: 'Login successful',
+      data: {
+        user: {
+          id: '2',
+          name: 'Jane User',
+          email: credentials.email,
+          department: 'Marketing',
+          role: 'user',
+          avatar: 'https://ui-avatars.com/api/?name=Jane+User&background=random'
+        },
+        token: 'mock-jwt-token-' + Date.now(),
+        refreshToken: 'mock-refresh-token-' + Date.now()
+      }
+    }
+  } else {
+    return {
+      success: false,
+      message: 'Invalid email or password',
+      data: {} as AuthResponse
+    }
+  }
+}
+
+const mockRegister = async (credentials: RegisterCredentials): Promise<{ success: boolean; data: AuthResponse; message: string }> => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 1200))
+  
+  // Mock email uniqueness check
+  if (credentials.email === 'admin@company.com' || credentials.email === 'user@company.com') {
+    return {
+      success: false,
+      message: 'Email already exists',
+      data: {} as AuthResponse
+    }
+  }
+  
+  return {
+    success: true,
+    message: 'Registration successful',
+    data: {
+      user: {
+        id: 'new-' + Date.now(),
+        name: credentials.name,
+        email: credentials.email,
+        department: credentials.department,
+        role: 'user',
+        avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(credentials.name)}&background=random`
+      },
+      token: 'mock-jwt-token-' + Date.now(),
+      refreshToken: 'mock-refresh-token-' + Date.now()
+    }
+  }
+}
+
+const mockRefreshToken = async (_refreshToken: string): Promise<{ success: boolean; data: AuthResponse; message: string }> => {
+  // Simulate API delay
+  await new Promise(resolve => setTimeout(resolve, 500))
+  
+  // For demo, always return success
+  return {
+    success: true,
+    message: 'Token refreshed',
+    data: {
+      user: {
+        id: '1',
+        name: 'John Admin',
+        email: 'admin@company.com',
+        department: 'IT',
+        role: 'admin',
+        avatar: 'https://ui-avatars.com/api/?name=John+Admin&background=random'
+      },
+      token: 'mock-jwt-token-refreshed-' + Date.now(),
+      refreshToken: 'mock-refresh-token-refreshed-' + Date.now()
+    }
+  }
+}

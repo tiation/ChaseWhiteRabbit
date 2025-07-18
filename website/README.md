@@ -11,6 +11,15 @@ This site serves as the central hub for TiaAstor's development ecosystem:
 - **19 Trillion Solution**: [19-trillion-solution](https://github.com/TiaAstor/19-trillion-solution)
 - **RiggerConnect Projects**: Advanced workforce management solutions
 
+## TiaAstor Integration
+
+This intranet is designed to showcase TiaAstor's innovative solutions and repositories. Key TiaAstor resources:
+
+- **Main Repository**: [TiaAstor GitHub](https://github.com/TiaAstor)
+- **ChaseWhiteRabbit Project**: [/Users/tiation/tiation-github/ChaseWhiteRabbit](https://github.com/TiaAstor/ChaseWhiteRabbit)
+- **19 Trillion Solution**: [19-trillion-solution](https://github.com/TiaAstor/19-trillion-solution)
+- **RiggerConnect Projects**: Advanced workforce management solutions
+
 ## Tech Stack
 
 - **Vue 3** - Progressive JavaScript framework
@@ -112,8 +121,8 @@ npm run build
 
 ### Configuration Notes
 
-- The `vite.config.ts` is configured with `base: '/ChaseWhiteRabbit/'` for GitHub Pages deployment
-- The GitHub Actions workflow uses Node.js 18 and deploys the `dist` folder from the `website` directory
+- The `vite.config.ts` is configured with `base: '/'` for GitHub Pages root deployment
+- The GitHub Actions workflow uses Node.js 18 and deploys the `dist` folder
 - The workflow requires `pages: write` and `id-token: write` permissions
 
 ## Features
@@ -126,3 +135,21 @@ npm run build
 - 📊 Pinia for state management
 - 🛠️ ESLint + Prettier for code quality
 - ⚡ Vite for fast development
+
+## Related Repositories
+
+This repository is part of the Tiation GitHub ecosystem. For a complete overview of all repositories and their relationships, see the [Repository Index](./REPOSITORY_INDEX.md).
+
+### Direct Dependencies
+- [19-trillion-solution](../19-trillion-solution/) - Parent solution framework
+- [workflows](../workflows/) - CI/CD pipelines
+- [server-configs-gae](../server-configs-gae/) - Infrastructure configs
+
+### Quick Links
+- [Repository Index](./REPOSITORY_INDEX.md) - Complete repository overview
+- [Development Setup](../ubuntu-dev-setup/README.md) - Development environment setup
+- [Workflows](../workflows/) - CI/CD templates
+- [Infrastructure](../server-configs-gae/) - Deployment configurations
+
+---
+*Part of the [Tiation](../tiation/) ecosystem*

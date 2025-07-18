@@ -73,12 +73,6 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../views/SettingsView.vue'),
     meta: { requiresAuth: true, title: 'Settings' }
   },
-  {
-    path: '/remote-desktop',
-    name: 'RemoteDesktop',
-    component: () => import('../views/RustDeskView.vue'),
-    meta: { requiresAuth: true, title: 'Remote Desktop' }
-  },
   
   // 404 route - must be last
   {
