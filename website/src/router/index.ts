@@ -10,6 +10,26 @@ const routes: RouteRecordRaw[] = [
     meta: { public: true }
   },
   
+  // NGO Specific Routes
+  {
+    path: '/ngo',
+    name: 'NGOHome',
+    component: () => import('../views/NGOHomeView.vue'),
+    meta: { public: true, title: 'Chase White Rabbit NGO' }
+  },
+  {
+    path: '/ngo/programs',
+    name: 'NGOPrograms',
+    component: () => import('../views/NGOProgramsView.vue'),
+    meta: { public: true, title: 'Our Programs' }
+  },
+  {
+    path: '/ngo/volunteer',
+    name: 'NGOVolunteer',
+    component: () => import('../views/NGOVolunteerView.vue'),
+    meta: { public: true, title: 'Volunteer Opportunities' }
+  },
+
   // Public routes (guest only)
   {
     path: '/login',
