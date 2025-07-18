@@ -1,0 +1,11 @@
+title: tiation-chase-white-rabbit-ngo
+description: Enterprise-grade solution with dark neon theme
+url: "https://tiaastor.github.io"
+baseurl: "/tiation-chase-white-rabbit-ngo"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+author: Tiation
+github_username: tiaastor
