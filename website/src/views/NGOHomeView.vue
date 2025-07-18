@@ -1,5 +1,6 @@
 &lt;template&gt;
-  &lt;div class="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"&gt;
+  &lt;NGOLayout&gt;
+    &lt;div class="bg-gradient-to-br from-cyan-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"&gt;
     &lt;!-- Hero Section --&gt;
     &lt;section class="relative overflow-hidden"&gt;
       &lt;div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-purple-600/20 dark:from-cyan-400/10 dark:to-purple-400/10"&gt;&lt;/div&gt;
@@ -161,10 +162,12 @@
       &lt;/div&gt;
     &lt;/section&gt;
   &lt;/div&gt;
+&lt;/NGOLayout&gt;
 &lt;/template&gt;
 
 &lt;script setup lang="ts"&gt;
 import { onMounted, ref } from 'vue'
+import NGOLayout from '../layouts/NGOLayout.vue'
 
 // Reactive data
 const impactStats = ref({
