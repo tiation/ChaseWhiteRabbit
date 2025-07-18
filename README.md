@@ -1,17 +1,17 @@
-# 🐰🔍 ChaseWhiteRabbit: Following Curiosity to Truth
+# 🐰 ChaseWhiteRabbit: Transforming Grief into Systemic Change
 
 <div align="center">
 
-![ChaseWhiteRabbit Banner](https://img.shields.io/badge/Follow-The%20White%20Rabbit-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptMCA2YTQgNCAwIDAgMSA0IDQgNCA0IDAgMCAxLTQgNCA0IDQgMCAwIDEtNC00IDQgNCAwIDAgMSA0LTR6Ii8+PC9zdmc+)
+![ChaseWhiteRabbit Banner](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-ChaseWhiteRabbit_NGO-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=FF00FF)
 
 **"People aren't broken. Fix the system."**
 
-*Technology that removes barriers for people with disabilities and those doing it tough*
+*Technology that removes barriers • Automation is compassion at scale*
 
-[![Website](https://img.shields.io/badge/Website-Live-brightgreen?style=flat-square)](https://tiation.github.io/ChaseWhiteRabbit/)
-[![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)](https://github.com/tiation/ChaseWhiteRabbit)
-[![NGO](https://img.shields.io/badge/Type-NGO-blue?style=flat-square)](docs/about/mission.md)
-[![Impact](https://img.shields.io/badge/Impact-Growing-orange?style=flat-square)](docs/impact/metrics.md)
+[![Website](https://img.shields.io/badge/🌐_Website-Live_Demo-00FFFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/ChaseWhiteRabbit/)
+[![Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/ChaseWhiteRabbit)
+[![NGO](https://img.shields.io/badge/🤝_Type-Non_Profit_Organization-007FFF?style=flat-square&labelColor=0A0A0A)](docs/about/mission.md)
+[![Impact](https://img.shields.io/badge/📊_Impact-Growing-00FFFF?style=flat-square&labelColor=0A0A0A)](docs/impact/metrics.md)
 
 </div>
 
