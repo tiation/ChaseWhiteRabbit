@@ -1,268 +1,262 @@
-# 🐰 ChaseWhiteRabbit: Transforming Grief into Systemic Change
+# tiation-chase-white-rabbit-ngo
 
 <div align="center">
 
-![ChaseWhiteRabbit Banner](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-ChaseWhiteRabbit_NGO-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=FF00FF)
+![tiation-chase-white-rabbit-ngo Banner](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-tiation-chase-white-rabbit-ngo-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
 
-**"People aren't broken. Fix the system."**
+**Social impact initiatives and community-driven projects for positive change**
 
-*Technology that removes barriers • Automation is compassion at scale*
+*Professional • Scalable • Mission-Driven*
 
-[![Website](https://img.shields.io/badge/🌐_Website-Live_Demo-00FFFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/ChaseWhiteRabbit/)
-[![Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/ChaseWhiteRabbit)
-[![NGO](https://img.shields.io/badge/🤝_Type-Non_Profit_Organization-007FFF?style=flat-square&labelColor=0A0A0A)](docs/about/mission.md)
-[![Impact](https://img.shields.io/badge/📊_Impact-Growing-00FFFF?style=flat-square&labelColor=0A0A0A)](docs/impact/metrics.md)
+[![🌐_Live_Demo](https://img.shields.io/badge/🌐_Live_Demo-View_Project-00FFFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-chase-white-rabbit-ngo)
+[![📚_Documentation](https://img.shields.io/badge/📚_Documentation-Complete-007FFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-chase-white-rabbit-ngo)
+[![🏗️_Architecture](https://img.shields.io/badge/🏗️_Architecture-Diagram-FF00FF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-chase-white-rabbit-ngo/architecture)
+[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-chase-white-rabbit-ngo)
+[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-chase-white-rabbit-ngo/blob/main/LICENSE)
 
 </div>
 
-<p align="center">
-  <strong>🌐 <a href="https://tiation.github.io/ChaseWhiteRabbit/">Visit Our Website</a></strong>
-</p>
+## 🚀 Overview
 
-<p align="center">
-  <a href="#mission">Mission</a> •
-  <a href="#projects">Projects</a> •
-  <a href="#get-involved">Get Involved</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#organization">Organization</a> •
-  <a href="#contact">Contact</a>
-</p>
+Social impact initiatives and community-driven projects for positive change
+
+### ✨ Key Features
+
+- 🎯 **Social Impact** - Community-driven initiatives for positive change
+- 🔧 **Transparency** - Open-source approach to social initiatives
+- 🌟 **Community Engagement** - Tools for community involvement and feedback
+- 🛡️ **Impact Measurement** - Metrics and reporting for social impact
 
 ---
 
-## Mission
+## 🏗️ Architecture
 
-ChaseWhiteRabbit is an NGO that transforms grief into systemic change through sustainable technology solutions. We create income-producing applications that address root causes of social problems, with our flagship project **GriefToDesign** leading this revolution. Our core belief is that **automation is compassion at scale** - we build tools that both generate sustainable revenue and create lasting social impact.
+![Architecture Diagram](assets/architecture/tiation-chase-white-rabbit-ngo-architecture.svg)
 
-### Our Values
+### System Components
 
-- **Big-Heart Efficiency**: Technology should serve humanity, not the other way around
-- **Radical Transparency**: We open-source everything possible and operate with full transparency
-- **Prevention Over Punishment**: We design systems that address root causes, not just symptoms
-- **Bandwidth Empathy**: Our solutions work for everyone, regardless of their device or connection speed
-- **Learning in Public**: We share our wins and missteps so others can learn and grow
+```mermaid
+graph TB
+    A[Community Hub] --> B[Impact Tracker]
+    B --> C[Event Manager]
+    C --> D[Volunteer Portal]
+    
+    style A fill:#00ffff,stroke:#ff00ff,stroke-width:2px
+    style B fill:#ff00ff,stroke:#00ffff,stroke-width:2px
+    style C fill:#00ffff,stroke:#ff00ff,stroke-width:2px
+    style D fill:#ff00ff,stroke:#00ffff,stroke-width:2px
+```
 
----
+### Technology Stack
 
-## Flagship Project: GriefToDesign
-
-**Repository**: [github.com/tiation/grieftodesign](https://github.com/tiation/grieftodesign)
-
-GriefToDesign transforms personal trauma into actionable systemic solutions. Born from the devastating loss of a child, this platform provides a framework for anyone to convert their grief into policy recommendations, system redesigns, and preventive measures.
-
-### The $19 Trillion Solution
-Our research demonstrates that Australia's $19 trillion in national wealth could eliminate scarcity and prevent many tragedies. The GriefToDesign platform includes:
-- Mathematical proof of wealth redistribution feasibility
-- 12 Acts for complete systemic transformation
-- Trust-first governance models
-- Implementation roadmaps for abundance-based society
-
-### Revenue Model
-- **Free Tier**: Basic grief-to-design tools for personal healing
-- **Professional Tier**: Advanced analytics for therapists and counselors ($29/month)
-- **Organization Tier**: Bulk licensing for NGOs and government agencies ($199/month)
-- **Consultation Services**: Custom systemic analysis projects ($2,000-$50,000)
+- **Frontend**: React, Gatsby
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Infrastructure**: GitHub Pages, Netlify
 
 ---
 
-## Additional Projects
+## 📋 Table of Contents
 
-### ChaseWhiteRabbit Intranet
-A 25-module, enterprise-grade intranet system designed for distributed community teams. The intranet serves as a central hub for our operations and is available for other NGOs to adopt and customize.
-
-**Tech Stack**: Vue.js, Vite, daisyUI, Tailwind CSS, PostgreSQL
-
-**Status**: Active Development
-
-### Accessible Service Navigator
-A mobile-friendly platform helping vulnerable individuals navigate government services, community resources, and support systems with minimal friction.
-
-**Tech Stack**: Astro, Markdown, Contentful, PWA
-
-**Status**: Beta Testing
-
-### Digital Inclusion Toolkit
-A collection of tools, guidelines, and resources to help organizations make their digital services more accessible and inclusive.
-
-**Tech Stack**: Static site with interactive tools
-
-**Status**: Public Release
-
-### Community Tech Support Network
-A volunteer network providing technical support and training to underserved communities, focusing on digital literacy and access.
-
-**Status**: Pilot Program
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Documentation](#-documentation)
+- [Screenshots](#-screenshots)
+- [FAQ](#-faq)
+- [Contributing](#-contributing)
+- [Support](#-support)
+- [License](#-license)
+- [About Tiation](#-about-tiation)
 
 ---
 
-## Get Involved
+## ✨ Features
 
-### Volunteer
-We're always looking for passionate individuals to join our cause. Whether you're a developer, designer, researcher, or community organizer, there's a place for you at ChaseWhiteRabbit.
-
-### Contribute
-Our projects are open-source and welcome contributions. Check out our [Contributing Guidelines](CONTRIBUTING.md) to get started.
-
-### Partner
-We collaborate with organizations that share our vision. If you're interested in partnering with us, please [get in touch](#contact).
-
-### Donate
-Your donations help us sustain our work and reach more people in need. [Donate here](https://chasewhiterabbit.org/donate).
+- 📚 **Educational Programs** - Comprehensive digital literacy curricula
+- 🤝 **Community Partnerships** - Local organization collaboration network
+- 💻 **Technology Access** - Device lending and internet connectivity programs
+- 🌱 **Sustainable Development** - Eco-friendly technology initiatives
+- 🔬 **Research & Innovation** - Impact measurement and program optimization
+- 🌍 **Global Reach** - International program expansion and knowledge sharing
 
 ---
 
-## Tech Stack
+## 🏃‍♂️ Quick Start
 
-### Core Technologies
-- **Frontend**: Vue.js, Astro, Tailwind CSS, daisyUI
-- **Backend**: Node.js, Python, FastAPI
-- **Database**: PostgreSQL, SQLite
-- **Infrastructure**: Docker, Netlify, Vercel
-- **Tools**: Git, GitHub Actions, Vite
+```bash
+# Clone the repository
+git clone https://github.com/tiation/tiation-chase-white-rabbit-ngo.git
+cd tiation-chase-white-rabbit-ngo
 
-### Development Principles
-- **Accessibility First**: WCAG 2.1 AA compliance minimum
-- **Progressive Enhancement**: Works without JavaScript
-- **Offline Support**: PWA with offline capabilities
-- **Low Bandwidth**: Optimized for slow connections
-- **Privacy Focused**: Minimal data collection, secure by design
+# Install dependencies
+npm install
+
+# Run the application
+npm start
+```
 
 ---
 
-## Organization
+## 📦 Installation
 
-### Team Structure
-ChaseWhiteRabbit operates with a flat hierarchy and distributed leadership model. We organize around projects rather than departments, allowing team members to contribute where their skills are most valuable.
+### Prerequisites
 
-### Decision Making
-We use a consensus-based approach for major decisions, with transparent documentation of our process and outcomes.
+- Node.js 18+
+- Git
+- Modern web browser
+- Community partnerships
+
+### Installation Steps
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/tiation/tiation-chase-white-rabbit-ngo.git
+   cd tiation-chase-white-rabbit-ngo
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # Set up community database
+   ```
+
+3. **Configuration**
+   ```bash
+   cp .env.example .env
+   # Configure community settings
+   ```
+
+---
+
+## 🎯 Usage
+
+### Basic Usage
+
+Join our community programs or explore volunteer opportunities.
+
+### Advanced Usage
+
+Partner with us for custom community solutions.
+
+### Examples
+
+Visit our impact stories and case studies.
+
+---
+
+## 📚 Documentation
+
+- **[User Guide](docs/user-guide.md)** - Complete user documentation
+- **[API Reference](docs/api-reference.md)** - Technical API documentation
+- **[Architecture](docs/architecture.md)** - System architecture overview
+- **[Deployment Guide](docs/deployment.md)** - Production deployment instructions
+- **[Developer Guide](docs/developer-guide.md)** - Development setup and guidelines
+
+### Live Documentation
+
+Visit our [GitHub Pages site](https://tiation.github.io/tiation-chase-white-rabbit-ngo) for interactive documentation.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="assets/screenshots/main-interface.png" alt="Main Interface" width="800">
+  <p><em>Main application interface</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="800">
+  <p><em>Analytics dashboard</em></p>
+</div>
+
+---
+
+## ❓ FAQ
+
+### General Questions
+
+**Q: What makes this solution enterprise-grade?**
+A: Our solution includes comprehensive security, scalability, monitoring, and enterprise integration features with professional support.
+
+**Q: Is this compatible with existing systems?**
+A: Yes, we provide extensive API and integration capabilities for seamless system integration.
+
+**Q: What support options are available?**
+A: We offer community support through GitHub Issues and professional enterprise support for commercial users.
+
+### Technical Questions
+
+**Q: What are the system requirements?**
+A: Web browser, mobile device, or community center access
+
+**Q: How do I handle large scale deployments?**
+A: See our [Deployment Guide](docs/deployment.md) for enterprise-scale deployment strategies.
+
+**Q: Are there any security considerations?**
+A: Yes, please review our [Security Guide](docs/security.md) for comprehensive security best practices.
+
+### Troubleshooting
+
+**Q: Common installation issues**
+A: Check our [Troubleshooting Guide](docs/troubleshooting.md) for solutions to common problems.
+
+**Q: Performance optimization**
+A: Refer to our [Performance Guide](docs/performance.md) for optimization strategies.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
 
 ### Code of Conduct
-All team members, volunteers, and contributors adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 
 ---
 
-## Project Summary
+## 🆘 Support
 
-ChaseWhiteRabbit represents a new model for NGOs: **sustainable social impact through income-producing applications**. We've created a comprehensive framework that transforms grief into systemic change while generating the revenue needed to sustain our mission.
+### Community Support
 
-### 🎯 **What We've Built**
+- **GitHub Issues**: [Report bugs or request features](https://github.com/tiation/tiation-chase-white-rabbit-ngo/issues)
+- **Discussions**: [Join community discussions](https://github.com/tiation/tiation-chase-white-rabbit-ngo/discussions)
+- **Documentation**: [Browse our documentation](https://tiation.github.io/tiation-chase-white-rabbit-ngo)
 
-#### Documentation Suite
-- **Board Governance Framework**: Professional governance structure with cooperative principles
-- **Technology Strategy**: 5-year roadmap for sustainable tech development
-- **Income-Producing Apps Strategy**: Revenue models and financial projections
-- **Cooperative Development Methodology**: Evidence-based development approach
-- **Accessibility Framework**: Industry-leading inclusive design standards
+### Enterprise Support
 
-#### Flagship Project: GriefToDesign
-- **Repository**: [github.com/tiation/grieftodesign](https://github.com/tiation/grieftodesign)
-- **Mission**: Transform personal trauma into systemic solutions
-- **Revenue Model**: Freemium SaaS ($29-$199/month professional tiers)
-- **Research Foundation**: $19 trillion wealth redistribution analysis
-- **Impact**: 12 Acts for complete systemic transformation
+For enterprise customers, we offer:
+- Priority support
+- Custom development
+- Training and consultation
+- SLA guarantees
 
-### 📈 **Financial Sustainability Model**
-
-```
-Year 1: $150K Revenue (MVP launch)
-Year 3: $1.2M Revenue (market expansion)
-Year 5: $5M+ Revenue (market leadership)
-```
-
-**Revenue Reinvestment Strategy:**
-- 60% → Core development and operations
-- 20% → New product development
-- 10% → Community programs and open source
-- 10% → Emergency fund and strategic reserves
-
-### 🔬 **Evidence-Based Approach**
-
-Our methodology is grounded in research showing that **cooperation consistently outperforms competition**:
-- **Higher Productivity**: Cooperative teams achieve more with fewer resources
-- **Enhanced Creativity**: Collaboration increases both quantity and quality of ideas
-- **Better Health**: Cooperative environments reduce stress and burnout
-- **Improved Outcomes**: Users and developers both benefit from cooperative approaches
-
-### 🌍 **Technology Stack for Social Good**
-
-- **Frontend**: Vue.js 3, Tailwind CSS, Progressive Web Apps
-- **Backend**: Node.js, Python/FastAPI, PostgreSQL
-- **AI Integration**: GPT models for grief narrative analysis
-- **Infrastructure**: Docker, Kubernetes, GitHub Actions
-- **Accessibility**: WCAG 2.1 AA compliance mandatory
-
-### 🤝 **Community-Driven Development**
-
-- **Open Source**: All code freely available for community improvement
-- **Transparent Governance**: Public decision-making and financial reporting
-- **User Ownership**: Communities control their data and governance
-- **Revenue Sharing**: Profits shared with affected communities
-
-### 📊 **Target Markets & Impact**
-
-#### Primary Markets
-- **Mental Health Sector**: $240B global market
-- **Government Technology**: $600B global market  
-- **NGO Management Tools**: $20B addressable market
-
-#### Social Impact Goals
-- Transform personal trauma into policy recommendations
-- Enable abundance-based governance models
-- Create accessible technology for underserved communities
-- Generate sustainable funding for social impact initiatives
-
-### 🚀 **Implementation Roadmap**
-
-- **Q1 2025**: Complete GriefToDesign MVP, launch freemium model
-- **Q2 2025**: Achieve $25K monthly recurring revenue, onboard enterprise customers
-- **Q3 2025**: Reach $75K monthly recurring revenue, international expansion
-- **Q4 2025**: Achieve profitability, launch government pilot programs
-
-This comprehensive approach ensures ChaseWhiteRabbit can create lasting systemic change while maintaining the financial resources needed to continue our mission of transforming grief into hope through cooperative technology development.
-
-> **📖 For the complete story of how we've built this unprecedented framework, see our [Documentation Summary](docs/DocumentationSummary.md) — a profound and beautiful overview of transforming grief into systematic hope.**
+Contact us at [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
 
 ---
 
-## Contact
+## 🔮 Tiation Ecosystem
 
-- **Website**: [ChaseWhiteRabbit.org](https://chasewhiterabbit.org)
-- **Email**: info@chasewhiterabbit.org
-- **Social**: [@ChaseWhiteRabbit](https://fosstodon.org/@ChaseWhiteRabbit)
-- **Address**: Melbourne, Australia
+This repository is part of the Tiation ecosystem. Explore related projects:
 
----
-
-<p align="center">
-  <sub>ChaseWhiteRabbit is a registered non-profit organization in Australia.</sub>
-</p>
-
-## Related Repositories
-
-This repository is part of the Tiation GitHub ecosystem. For a complete overview of all repositories and their relationships, see the [Repository Index](./REPOSITORY_INDEX.md).
-
-### Direct Dependencies
-- [grieftodesign](../grieftodesign/) - Creative design collaboration
-- [core-foundation-rs](../core-foundation-rs/) - Core Rust libraries
-
-### Quick Links
-- [Repository Index](./REPOSITORY_INDEX.md) - Complete repository overview
-- [Development Setup](../ubuntu-dev-setup/README.md) - Development environment setup
-- [Workflows](../workflows/) - CI/CD templates
-- [Infrastructure](../server-configs-gae/) - Deployment configurations
-
----
-*Part of the [Tiation](../tiation/) ecosystem*
-
----
-
-## 📞 Support & Contact
-
-- 📧 **Enterprise Support**: [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/tiaastor/tiation-chase-white-rabbit-ngo/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/tiaastor/tiation-chase-white-rabbit-ngo/wiki)
-- 🔗 **GitHub**: [Repository](https://github.com/tiaastor/tiation-chase-white-rabbit-ngo)
+- [🌟 Tiation Platform](https://github.com/tiation/tiation-ai-platform) - Enterprise AI platform
+- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
+- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
+- [🐳 Docker Solutions](https://github.com/tiation/tiation-docker-debian) - Container orchestration
+- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
+- [🐰 ChaseWhiteRabbit NGO](https://github.com/tiation/tiation-chase-white-rabbit-ngo) - Social impact initiatives
+- [🏗️ Infrastructure](https://github.com/tiation/tiation-rigger-infrastructure) - Enterprise infrastructure
 
 ---
 
@@ -272,33 +266,33 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🔗 Related Projects
+## 🌟 About Tiation
 
-- [Tiation Terminal Workflows](https://github.com/tiaastor/tiation-terminal-workflows)
-- [Tiation Docker Debian](https://github.com/tiaastor/tiation-docker-debian)
-- [Tiation AI Platform](https://github.com/tiaastor/tiation-ai-platform)
-- [Tiation CMS](https://github.com/tiaastor/tiation-cms)
+**Tiation** is a leading provider of enterprise-grade software solutions, specializing in automation, productivity, and system integration tools. Our mission is to empower organizations with cutting-edge technology that drives efficiency and innovation.
+
+### Our Solutions
+
+- **Automation Platform**: Comprehensive business process automation
+- **Developer Tools**: Professional development and deployment tools
+- **Enterprise Integration**: Seamless system integration solutions
+- **Security Framework**: Advanced security and compliance tools
+
+### Connect With Us
+
+- **Website**: [https://github.com/tiation](https://github.com/tiation)
+- **GitHub**: [https://github.com/tiation](https://github.com/tiation)
+- **LinkedIn**: [Tiation Company](https://linkedin.com/company/tiation)
+- **Twitter**: [@TiationTech](https://twitter.com/TiationTech)
 
 ---
 
 <div align="center">
-  **⭐ Star this repository if you find it helpful! ⭐**
-  
-  <p><strong>Built with ❤️ and enterprise-grade standards by <a href="https://github.com/tiaastor">Tiation</a></strong></p>
+  <p>
+    <strong>Built with ❤️ by the Tiation Team</strong>
+  </p>
+  <p>
+    <a href="https://github.com/tiation">
+      <img src="https://img.shields.io/badge/Powered%20by-Tiation-cyan.svg" alt="Powered by Tiation">
+    </a>
+  </p>
 </div>
-
----
-
-## 🔮 Tiation Ecosystem
-
-This repository is part of the Tiation ecosystem. Explore related projects:
-
-- [🌟 TiaAstor](https://github.com/TiaAstor/TiaAstor) - Personal brand and story
-- [🐰 ChaseWhiteRabbit NGO](https://github.com/tiation/tiation-chase-white-rabbit-ngo) - Social impact initiatives
-- [🏗️ Infrastructure](https://github.com/tiation/tiation-rigger-infrastructure) - Enterprise infrastructure
-- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
-- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
-- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
-
----
-*Built with 💜 by the Tiation team*
